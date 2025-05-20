@@ -28,5 +28,5 @@ ______________________________________________________________________
 
 [1]: https://pypi.org/project/dtools.iterables/
 [2]: https://github.com/grscheller/dtools-iterables/
-[3]: https://grscheller.github.io/dtools-namespace-projects/fp/
+[3]: https://grscheller.github.io/dtools-namespace-projects/iterables/
 [4]: https://github.com/grscheller/dtools-namespace-projects/blob/main/README.md
