@@ -55,9 +55,9 @@ __all__ = [
     'accumulate',
     'foldl',
     'mb_fold_left',
-    'reducel',
-    'sc_reducel',
-    'sc_reducer',
+    'reduce_left',
+    'sc_reduce_left',
+    'sc_reduce_right',
 ]
 
 D = TypeVar('D')  # Needed only for pdoc documentation generation.
@@ -290,7 +290,7 @@ def accumulate[D, L](
             yield acc
 
 
-def reducel[D](iterable: Iterable[D], f: Callable[[D, D], D], /) -> D | Never:
+def reduce_left[D](iterable: Iterable[D], f: Callable[[D, D], D], /) -> D | Never:
     """Fold an iterable left with a function.
 
     * traditional FP type order given for function `f`
@@ -362,7 +362,7 @@ def mb_fold_left[L, D](
     return MB(acc)
 
 
-def sc_reducel[D](
+def sc_reduce_left[D](
     iterable: Iterable[D],
     f: Callable[[D, D], D],
     /,
@@ -406,7 +406,7 @@ def sc_reducel[D](
     return (mb_reduced, it_rest)
 
 
-def sc_reducer[D](
+def sc_reduce_right[D](
     iterable: Iterable[D],
     f: Callable[[D, D], D],
     /,
