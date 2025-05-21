@@ -291,11 +291,11 @@ def accumulate[D, L](
 
 
 def reducel[D](iterable: Iterable[D], f: Callable[[D, D], D], /) -> D | Never:
-    """Folds an iterable left with optional initial value.
+    """Fold an iterable left with a function.
 
     * traditional FP type order given for function `f`
-    * if iterable empty raises StopIteration exception
-    * does not catch any exception `f` raises
+    * if iterable empty, `StopIteration` exception raised
+    * does not catch any exceptions `f` may raise
     * never returns if `iterable` generates an infinite iterator
 
     """
@@ -315,10 +315,10 @@ def reducel[D](iterable: Iterable[D], f: Callable[[D, D], D], /) -> D | Never:
 def foldl[D, L](
     iterable: Iterable[D], f: Callable[[L, D], L], initial: L, /
 ) -> L | Never:
-    """Folds an iterable left with optional initial value.
+    """Folds an iterable left with a function and initial value.
 
     * traditional FP type order given for function `f`
-    * does not catch any exception `f` may raise
+    * does not catch any exceptions `f` may raise
     * like builtin `sum` for Python >=3.8 except
       - not restricted to __add__ for the folding function
       - initial value required, does not default to `0` for initial value
@@ -371,8 +371,7 @@ def sc_reducel[D](
     include_start: bool = True,
     include_stop: bool = True,
 ) -> tuple[MB[D], Iterator[D]]:
-    """Short circuit version of a left reduce. Useful for infinite or
-    non-reversible iterables.
+    """Short circuit version of a left reduce. Useful for infinite or iterables.
 
     * Behavior for default arguments will
       * left reduce finite iterable
