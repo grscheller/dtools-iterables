@@ -1,6 +1,7 @@
-# Developer Tools - Pythonic functional programming
+# Developer Tools - Tools for iterables and iterators
 
-Tools for iterables and iterators.
+Tools for iterables and iterators. This project is part of the
+[Developer Tools for Python][4] **dtools** namespace project.
 
 - **Repositories**
   - [dtools.iterables][1] project on *PyPI*
@@ -8,12 +9,7 @@ Tools for iterables and iterators.
 - Detailed documentation for dtools.fp
   - [Detailed API documentation][3] on *GH-Pages*
 
-This project is part of the [Developer Tools for Python][4] **dtools**
-namespace project.
-
 ## Overview
-
-Library of iterator related functions and enumerations.
 
 - Concatenating and merging iterables
 - Dropping and taking values from iterables
